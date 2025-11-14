@@ -97,7 +97,7 @@ function App(){
       <div className="header">
         <div className="logo">CX</div>
         <div>
-          <div className="title">CredenX — Decentralized Credential Vault</div>
+          <div className="title">CredenX — Digital Identity & Certificates</div>
           <div className="small">A Trusted Gateway for Verifiable Digital Credentials</div>
         </div>
         <div style={{marginLeft:'auto'}}>
@@ -109,43 +109,43 @@ function App(){
 
       <div className="grid">
         <div className="card">
-          <h3>Register / Manage DID</h3>
+          <h3>Create Your Digital ID</h3>
           <div className="form-row">
-            <label>Desired DID (optional)</label>
+            <label>Your Digital ID</label>
             <input type="text" value={did} onChange={(e)=>setDid(e.target.value)} placeholder={`did:ethr:${walletAddr || '0x...'}`} />
           </div>
           <div className="form-row">
-            <label>Controller (optional)</label>
+            <label>Account ID</label>
             <input type="text" value={controller} onChange={(e)=>setController(e.target.value)} placeholder="controller DID or metadata" />
           </div>
-          <button className="primary" onClick={registerDID}>Register DID on Chain</button>
+          <button className="primary" onClick={registerDID}>Create My Digital ID</button>
 
           <hr style={{margin:'18px 0', borderColor:'rgba(255,255,255,0.03)'}}/>
 
-          <h3>Issue Verifiable Credential</h3>
+          <h3>Trusted Digital Proof</h3>
           <div className="form-row">
-            <label>Credential Subject Data (JSON)</label>
+            <label>Person/Document Details</label>
             <textarea rows={4} value={subjectData} onChange={(e)=>setSubjectData(e.target.value)} placeholder='{"name":"Aishwarya S","document":"Aadhaar 1234..."}'></textarea>
           </div>
           <div className="form-row">
-            <label>Attach Document (optional)</label>
+            <label>Attach Document</label>
             <input type="file" onChange={(e)=>setFile(e.target.files[0])} />
           </div>
-          <button className="primary" onClick={issueVC}>Request Issuance</button>
+          <button className="primary" onClick={issueVC}>Store Certificates</button>
         </div>
 
         <div className="card">
           <h3>Credentials</h3>
           <div className="list">
-            {creds.length===0 && <div className="small">No credentials yet.</div>}
+            {creds.length===0 && <div className="small">You haven't created any certificates yet.</div>}
             {creds.map(c => (
               <div key={c.id} className="cred">
                 <div>
                   <div style={{fontWeight:700}}>{c.id}</div>
-                  <div className="small">issued at {new Date(c.createdAt).toLocaleString()}</div>
+                  <div className="small">Created On {new Date(c.createdAt).toLocaleString()}</div>
                 </div>
                 <div style={{display:'flex',gap:8}}>
-                  <button className="primary" onClick={()=>verifyVC(c.signedVC)}>Verify</button>
+                  <button className="primary" onClick={()=>verifyVC(c.signedVC)}>View Certificate</button>
                   <a className="small" href={c.fileCid ? `https://ipfs.io/ipfs/${c.fileCid}` : '#'} target="_blank" rel="noreferrer">{c.fileCid ? 'View Attachment' : ''}</a>
                 </div>
               </div>
@@ -153,7 +153,7 @@ function App(){
           </div>
 
           <footer>
-            <div> working yet </div>
+            <div> Ready </div>
           </footer>
         </div>
       </div>
