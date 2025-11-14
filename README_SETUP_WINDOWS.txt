@@ -1,4 +1,4 @@
-# 🪪 CredenX — Decentralized Credential Verification  
+# 🪪 CredenX — Digital Identity & Certificates  
 *By Team Code Crusaders*  
 
 CredenX is a blockchain-based system for decentralized identity (DID) creation and verifiable credential issuance, built using Ethereum (Ganache), MetaMask, IPFS, React, and Express.js.
@@ -6,10 +6,10 @@ CredenX is a blockchain-based system for decentralized identity (DID) creation a
 ---
 
 ## 🚀 Features
-- Register Decentralized Identifiers (DIDs)
-- Issue Verifiable Credentials (VCs)
+- Create Your Digital ID
+- Trusted Digital Proof
 - Store files securely on IPFS via Infura
-- Verify credentials on-chain
+- Credentials
 - Wallet-based authentication via MetaMask
 
 ---
